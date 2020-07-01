@@ -138,6 +138,7 @@ public abstract class IniFactorySupport<T> extends AbstractFactory<T> {
 
         if (CollectionUtils.isEmpty(ini)) {
             log.debug("No populated Ini available.  Creating a default instance.");
+            //创建默认的对象实例
             instance = createDefaultInstance();
             if (instance == null) {
                 String msg = getClass().getName() + " implementation did not return a default instance in " +
@@ -147,6 +148,7 @@ public abstract class IniFactorySupport<T> extends AbstractFactory<T> {
             }
         } else {
             log.debug("Creating instance from Ini [" + ini + "]");
+            //根据ini的对象创建实例
             instance = createInstance(ini);
             if (instance == null) {
                 String msg = getClass().getName() + " implementation did not return a constructed instance from " +

@@ -338,6 +338,7 @@ public class DelegatingSubject implements Subject {
             log.trace("Starting session for host {}", getHost());
             SessionContext sessionContext = createSessionContext();
             Session session = this.securityManager.start(sessionContext);
+            //这里为啥要封装一下
             this.session = decorate(session);
         }
         return this.session;

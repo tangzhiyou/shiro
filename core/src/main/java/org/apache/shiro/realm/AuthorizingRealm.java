@@ -310,6 +310,9 @@ public abstract class AuthorizingRealm extends AuthenticatingRealm
      */
     protected AuthorizationInfo getAuthorizationInfo(PrincipalCollection principals) {
 
+        /**
+         * 先占一个坑位，分析一下什么时候来调用
+         */
         if (principals == null) {
             return null;
         }

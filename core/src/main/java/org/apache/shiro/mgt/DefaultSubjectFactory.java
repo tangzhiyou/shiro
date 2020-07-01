@@ -44,6 +44,9 @@ public class DefaultSubjectFactory implements SubjectFactory {
         boolean authenticated = context.resolveAuthenticated();
         String host = context.resolveHost();
 
+        /**
+         * DelegatingSubject的类，可以分析一下
+         */
         return new DelegatingSubject(principals, authenticated, host, session, sessionCreationEnabled, securityManager);
     }
 

@@ -29,6 +29,7 @@ public abstract class AbstractFactory<T> implements Factory<T> {
     private T singletonInstance;
 
     public AbstractFactory() {
+        //默认使用单例的模式
         this.singleton = true;
     }
 
@@ -40,6 +41,10 @@ public abstract class AbstractFactory<T> implements Factory<T> {
         this.singleton = singleton;
     }
 
+    /**
+     * 使用单例的模式的使用
+     * @return
+     */
     public T getInstance() {
         T instance;
         if (isSingleton()) {

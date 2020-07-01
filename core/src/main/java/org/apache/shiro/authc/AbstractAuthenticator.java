@@ -187,6 +187,9 @@ public abstract class AbstractAuthenticator implements Authenticator, LogoutAwar
      */
     public final AuthenticationInfo authenticate(AuthenticationToken token) throws AuthenticationException {
 
+        /**
+         * 验证的主要方法
+         */
         if (token == null) {
             throw new IllegalArgumentException("Method argument (authentication token) cannot be null.");
         }

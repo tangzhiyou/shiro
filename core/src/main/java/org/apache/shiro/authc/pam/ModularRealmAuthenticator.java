@@ -177,6 +177,7 @@ public class ModularRealmAuthenticator extends AbstractAuthenticator {
                     "configured correctly or that the realm accepts AuthenticationTokens of this type.";
             throw new UnsupportedTokenException(msg);
         }
+        //正在验证 realm.getAuthenticationInfo
         AuthenticationInfo info = realm.getAuthenticationInfo(token);
         if (info == null) {
             String msg = "Realm [" + realm + "] was unable to find account data for the " +
@@ -268,6 +269,9 @@ public class ModularRealmAuthenticator extends AbstractAuthenticator {
      */
     protected AuthenticationInfo doAuthenticate(AuthenticationToken authenticationToken) throws AuthenticationException {
         assertRealmsConfigured();
+        /**
+         * 正在验证Realm
+         */
         Collection<Realm> realms = getRealms();
         if (realms.size() == 1) {
             return doSingleRealmAuthentication(realms.iterator().next(), authenticationToken);

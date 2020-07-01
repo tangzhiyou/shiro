@@ -138,6 +138,9 @@ public class IniSecurityManagerFactory extends IniFactorySupport<SecurityManager
         getReflectionBuilder().setObjects(createDefaults(ini, mainSection));
         Map<String, ?> objects = buildInstances(mainSection);
 
+        /**
+         * 这里获取的是DefaultSecurityManager实例
+         */
         SecurityManager securityManager = getSecurityManagerBean();
 
         boolean autoApplyRealms = isAutoApplyRealms(securityManager);

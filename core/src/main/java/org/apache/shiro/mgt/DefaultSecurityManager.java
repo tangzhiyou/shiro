@@ -270,6 +270,7 @@ public class DefaultSecurityManager extends SessionsSecurityManager {
      * @throws AuthenticationException if there is a problem authenticating the specified {@code token}.
      */
     public Subject login(Subject subject, AuthenticationToken token) throws AuthenticationException {
+        //登录方法的实现
         AuthenticationInfo info;
         try {
             info = authenticate(token);
